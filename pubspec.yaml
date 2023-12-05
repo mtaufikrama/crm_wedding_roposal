@@ -6,13 +6,13 @@ environment:
   sdk: '>=3.2.0 <4.0.0'
 
 dependencies: 
-  cupertino_icons: ^1.0.2
   get: 4.6.6
   get_cli:
   font_awesome_flutter: ^10.1.0
   flutter_rating_bar: ^4.0.1
   intl: ^0.17.0
   animations: ^2.0.3
+  fine_stepper: ^0.3.0
   flutter: 
     sdk: flutter
 
