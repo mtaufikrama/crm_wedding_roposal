@@ -10,24 +10,33 @@ class InfoDasar extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                height: 260,
-                width: 170,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(.15),
-                      blurRadius: 10,
-                      offset: Offset(0, 10),
+              Column(
+                children: [
+                  Text('Tema yang di pilih'),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 260,
+                    width: 170,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/ss3.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(.15),
+                          blurRadius: 10,
+                          offset: Offset(0, 10),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Text('Konten Container'),
-                ),
+                  ),
+                ],
               ),
               SizedBox(width: 10),
               Expanded(

@@ -6,19 +6,12 @@ class pencarian extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 0, left: 10, right: 10),
+      margin: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
       width: double.infinity,
       height: 50,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(.15),
-            blurRadius: 10,
-            offset: Offset(0, 10),
-          ),
-        ],
       ),
       child: Row(
         children: [

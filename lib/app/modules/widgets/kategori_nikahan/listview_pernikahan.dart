@@ -2,35 +2,48 @@ import 'package:crm_wedding/app/modules/webview/views/webview_view.dart';
 import 'package:crm_wedding/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class CardProdukList extends StatefulWidget {
-  const CardProdukList({Key? key});
+class ListViewPernikahan extends StatelessWidget {
+  const ListViewPernikahan({super.key});
 
-  @override
-  State<CardProdukList> createState() => _CardProdukListState();
-}
-
-class _CardProdukListState extends State<CardProdukList> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
+      child: Column(
         children: [
-          _buildCard(context),
-          _buildCard(context),
-          _buildCard(context),
+          SizedBox(
+            height: 120,
+          ),
+          Container(
+            width: 370,
+            margin: EdgeInsets.only(left: 10, top: 10),
+            child: Text(
+                'Seluruh tema dibawah ini bisa Digunakan Semua. Klik lihat untuk melihat hasil',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 15,
+                )),
+          ),
+          _buildCard(),
+          _buildCard(),
+          _buildCard(),
+          _buildCard(),
+          _buildCard(),
+          SizedBox(
+            height: 70,
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildCard(BuildContext context) {
+  Widget _buildCard() {
     return Container(
       height: 220,
       width: 370,
-      margin: EdgeInsets.only(left: 10),
+      margin: EdgeInsets.only(left: 10, top: 10),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -106,28 +119,27 @@ class _CardProdukListState extends State<CardProdukList> {
                 height: 10,
               ),
               Container(
-                margin: EdgeInsets.only(left: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Reting',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueAccent),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      '5.0',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueAccent),
-                    ),
-                  ],
-                ),
-              ),
+                  margin: EdgeInsets.only(left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Reting',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueAccent),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        '5.0',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueAccent),
+                      ),
+                    ],
+                  )),
               Container(
                 margin: EdgeInsets.only(left: 10),
                 child: Row(
@@ -203,13 +215,5 @@ class _CardProdukListState extends State<CardProdukList> {
         ],
       ),
     );
-  }
-
-  void launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      print('Could not launch $url');
-    }
   }
 }

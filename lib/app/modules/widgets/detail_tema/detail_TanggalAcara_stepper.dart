@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Infowanita extends StatelessWidget {
-  const Infowanita({super.key});
+class TanggalAcara extends StatelessWidget {
+  const TanggalAcara({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Infowanita extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
-              'Mempelai wanita',
+              'Alamat & Tanggal Acara 1',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -24,53 +24,27 @@ class Infowanita extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
+          buildTextField('Nama Acara', 'Resepsi Pernikahan ?'),
+          buildTextField('Pilih Kabupaten/Kota', 'Pilih Kabupaten/Kota'),
+          buildTextField(
+            'Alamat Acara (Pilih Kabupaten terlebihdulu Sebelum Mengisi Alamat)',
+            'Lokasi Alamat Acara ?',
+          ),
+          SizedBox(height: 10),
           Row(
             children: [
-              Container(
-                height: 260,
-                width: 150,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                ),
-                child: Center(
-                  child: Text('Konten Container'),
-                ),
+              Expanded(
+                child: buildTextField('Jam Awal', 'Jam Awal'),
               ),
               SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('Foto wanita (Maksimal 2MB)'),
-                  SizedBox(height: 10),
-                  Container(
-                    height: 40,
-                    width: 170,
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                    ),
-                    child: Center(
-                      child: Text('Pilih Foto dari Gallery'),
-                    ),
-                  ),
-                ],
+              Expanded(
+                child: buildTextField('Jam Awal', 'Jam Akhir'),
               ),
             ],
           ),
-          SizedBox(height: 10),
-          buildTextField('Nama wanita', 'Nama wanita ?'),
-          buildTextField('Nama Panggilan wanita', 'Panggilan wanita ?'),
-          buildTextField('Nama Ibu wanita', 'Ibu wanita ?'),
-          buildTextField('Nama Ayah wanita', 'Ayah wanita ?'),
-          buildTextField(
-            'Anak ke? Contoh : Anak Pertama, Anak kedua, Anak ketiga dst...',
-            'Anak Pertama ?',
-          ),
-          buildTextField('Alamat wanita', 'Alamat rumah si wanita ?'),
+          buildTextField('Zona Waktu', 'Zona Waktu'),
+          buildTextField('Link Google Maps', 'Link Google Maps'),
         ],
       ),
     );

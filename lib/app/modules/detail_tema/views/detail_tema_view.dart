@@ -1,6 +1,9 @@
+import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_TanggalAcara_stepper.dart';
+import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_gallery_stepper.dart';
 import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_infodasar_stepper.dart';
 import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_infopria_stepper.dart';
 import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_infowanita_stepper.dart';
+import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_ucapan_stepper.dart';
 import 'package:crm_wedding/app/routes/app_pages.dart';
 import 'package:fine_stepper/fine_stepper.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +27,9 @@ class _DetailTemaViewState extends State<DetailTemaView> {
         StepItem.icon(builder: buildColumnStep),
         StepItem.icon(builder: buildStackStep),
         StepItem.icon(builder: buildFormStep),
+        StepItem.icon(builder: buildTanggalAcaraStep),
+        StepItem.icon(builder: buildGalleryStep),
+        StepItem.icon(builder: buildUcapamStep),
       ],
     );
   }
@@ -44,6 +50,18 @@ class _DetailTemaViewState extends State<DetailTemaView> {
         StepItem.linear(
           title: '',
           builder: buildStackStep,
+        ),
+        StepItem.linear(
+          title: '',
+          builder: buildTanggalAcaraStep,
+        ),
+        StepItem.linear(
+          title: '',
+          builder: buildGalleryStep,
+        ),
+        StepItem.linear(
+          title: '',
+          builder: buildUcapamStep,
         ),
       ],
     );
@@ -158,6 +176,90 @@ class _DetailTemaViewState extends State<DetailTemaView> {
                     style: TextStyle(color: Colors.transparent),
                   ),
                   Infowanita(),
+                  SizedBox(
+                    height: 60,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildTanggalAcaraStep(BuildContext context) {
+    return StepBuilder(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Step ${FineStepper.of(context).stepIndex + 1}',
+                    style: TextStyle(color: Colors.transparent),
+                  ),
+                  TanggalAcara(),
+                  SizedBox(
+                    height: 60,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildGalleryStep(BuildContext context) {
+    return StepBuilder(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Step ${FineStepper.of(context).stepIndex + 1}',
+                    style: TextStyle(color: Colors.transparent),
+                  ),
+                  GalleryView(),
+                  SizedBox(
+                    height: 60,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildUcapamStep(BuildContext context) {
+    return StepBuilder(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Step ${FineStepper.of(context).stepIndex + 1}',
+                    style: TextStyle(color: Colors.transparent),
+                  ),
+                  UcapanView(),
                   SizedBox(
                     height: 60,
                   ),

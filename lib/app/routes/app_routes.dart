@@ -6,6 +6,8 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const ONBOARD_LANDING = _Paths.ONBOARD_LANDING;
   static const DETAIL_TEMA = _Paths.DETAIL_TEMA;
+  static const KATEGORI_PERNIKAHAN = _Paths.KATEGORI_PERNIKAHAN;
+  static const WEBVIEW = _Paths.WEBVIEW;
 }
 
 abstract class _Paths {
@@ -13,4 +15,6 @@ abstract class _Paths {
   static const HOME = '/home';
   static const ONBOARD_LANDING = '/onboard-landing';
   static const DETAIL_TEMA = '/detail-tema';
+  static const KATEGORI_PERNIKAHAN = '/kategori-pernikahan';
+  static const WEBVIEW = '/webview';
 }

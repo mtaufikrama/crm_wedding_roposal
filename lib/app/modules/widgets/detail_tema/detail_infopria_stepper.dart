@@ -16,7 +16,7 @@ class InfoPria extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
-              'Tampilan Pria',
+              'Mempelai Pria',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
