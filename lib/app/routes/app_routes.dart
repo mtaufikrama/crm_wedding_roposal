@@ -8,6 +8,9 @@ abstract class Routes {
   static const DETAIL_TEMA = _Paths.DETAIL_TEMA;
   static const KATEGORI_PERNIKAHAN = _Paths.KATEGORI_PERNIKAHAN;
   static const WEBVIEW = _Paths.WEBVIEW;
+  static const FAVORITE = _Paths.FAVORITE;
+  static const RIWAYAT = _Paths.RIWAYAT;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
@@ -17,4 +20,7 @@ abstract class _Paths {
   static const DETAIL_TEMA = '/detail-tema';
   static const KATEGORI_PERNIKAHAN = '/kategori-pernikahan';
   static const WEBVIEW = '/webview';
+  static const FAVORITE = '/favorite';
+  static const RIWAYAT = '/riwayat';
+  static const PROFILE = '/profile';
 }

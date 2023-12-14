@@ -1,9 +1,9 @@
-import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_TanggalAcara_stepper.dart';
-import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_gallery_stepper.dart';
-import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_infodasar_stepper.dart';
-import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_infopria_stepper.dart';
-import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_infowanita_stepper.dart';
-import 'package:crm_wedding/app/modules/widgets/detail_tema/detail_ucapan_stepper.dart';
+import 'package:crm_wedding/app/modules/detail_tema/widgets_detail_tema/detail_TanggalAcara_stepper.dart';
+import 'package:crm_wedding/app/modules/detail_tema/widgets_detail_tema/detail_gallery_stepper.dart';
+import 'package:crm_wedding/app/modules/detail_tema/widgets_detail_tema/detail_infodasar_stepper.dart';
+import 'package:crm_wedding/app/modules/detail_tema/widgets_detail_tema/detail_infopria_stepper.dart';
+import 'package:crm_wedding/app/modules/detail_tema/widgets_detail_tema/detail_infowanita_stepper.dart';
+import 'package:crm_wedding/app/modules/detail_tema/widgets_detail_tema/detail_ucapan_stepper.dart';
 import 'package:crm_wedding/app/routes/app_pages.dart';
 import 'package:fine_stepper/fine_stepper.dart';
 import 'package:flutter/material.dart';

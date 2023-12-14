@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:crm_wedding/app/modules/widgets/home/card_listview_tema_rekomendasi.dart';
-import 'package:crm_wedding/app/modules/widgets/home/card_listview_tema_undangan.dart';
+import 'package:crm_wedding/app/modules/home/widgets_home/card_listview_tema_rekomendasi.dart';
+import 'package:crm_wedding/app/modules/home/widgets_home/card_listview_tema_undangan.dart';
 
 class ListBody extends StatelessWidget {
   const ListBody({Key? key});

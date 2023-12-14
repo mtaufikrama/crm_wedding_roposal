@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:crm_wedding/app/modules/widgets/onboard/introduction_animation/love/love.dart';
 import 'package:crm_wedding/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +16,22 @@ class WebviewView extends GetView<WebviewController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 60,
         backgroundColor: Color(0xffF7EBE1).withAlpha(200),
-        title: Text('Tema Undangan Online Website',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        title: ElevatedButton(
+          onPressed: () => Get.toNamed(Routes.DETAIL_TEMA),
+          style: ElevatedButton.styleFrom(
+            primary: Color(0xff132137),
+            onPrimary: Colors.white,
+          ),
+          child: const Text(
+            'Mulai Buat Undangan',
+            style: TextStyle(fontSize: 10),
+          ),
+        ),
+        actions: [
+          MyCustomWidget(),
+        ],
       ),
       body: WebView(
         initialUrl: url,
@@ -32,7 +46,7 @@ class WebviewView extends GetView<WebviewController> {
             alignment: Alignment.topRight,
             child: Container(
               height: 200,
-              margin: EdgeInsets.only(left: 35, top: 130),
+              margin: EdgeInsets.only(left: 35, top: 135),
               child: FloatingActionButton.extended(
                   heroTag: "btn1",
                   // backgroundColor: Color(0XFF0D325E),
@@ -127,32 +141,6 @@ class WebviewView extends GetView<WebviewController> {
                             ),
                           ],
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 20,
-                          ),
-                          ElevatedButton(
-                            onPressed: () => Get.toNamed(Routes.DETAIL_TEMA),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color(0xff132137),
-                              onPrimary: Colors.white,
-                            ),
-                            child: const Text(
-                              'Mulai Buat Undangan',
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                        ],
                       ),
                     ],
                   ),

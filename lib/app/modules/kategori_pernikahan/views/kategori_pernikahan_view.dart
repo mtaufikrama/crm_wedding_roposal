@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:crm_wedding/app/modules/widgets/home/pencarian.dart';
-import 'package:crm_wedding/app/modules/widgets/kategori_nikahan/listview_pernikahan.dart';
+import 'package:crm_wedding/app/modules/home/widgets_home/pencarian.dart';
+import 'package:crm_wedding/app/modules/kategori_pernikahan/widgets_kategori_nikahan/listview_pernikahan.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
