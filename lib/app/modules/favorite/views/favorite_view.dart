@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:crm_wedding/app/modules/favorite/widgets_favorite/listview_aqiqah.dart';
 import 'package:crm_wedding/app/modules/favorite/widgets_favorite/listview_favorite.dart';
 import 'package:crm_wedding/app/modules/favorite/widgets_favorite/listview_khitan.dart';
@@ -50,7 +52,7 @@ class _FavoriteViewState extends State<FavoriteView> {
               vertical: 10,
             ),
             padding: EdgeInsets.all(10),
-            height: isExpanded ? 60 : 1365,
+            height: isExpanded ? 150 : 1435,
             curve: Curves.fastLinearToSlowEaseIn,
             duration: Duration(milliseconds: 1200),
             decoration: BoxDecoration(
@@ -71,6 +73,42 @@ class _FavoriteViewState extends State<FavoriteView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        right: 0,
+                        bottom: 0,
+                      ),
+                      height: 120,
+                      width: 100,
+                      padding: EdgeInsets.all(10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/images/ss3.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(
+                            0.5), // Set the opacity as per your preference
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.white.withOpacity(.15),
+                            blurRadius: 10,
+                            offset: Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                    ),
                     Column(
                       children: [
                         Text(
@@ -134,7 +172,7 @@ class _FavoriteViewState extends State<FavoriteView> {
               vertical: 10,
             ),
             padding: EdgeInsets.all(10),
-            height: isExpanded2 ? 60 : 1365,
+            height: isExpanded2 ? 150 : 1435,
             curve: Curves.fastLinearToSlowEaseIn,
             duration: Duration(milliseconds: 1200),
             decoration: BoxDecoration(
@@ -155,6 +193,42 @@ class _FavoriteViewState extends State<FavoriteView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        right: 0,
+                        bottom: 0,
+                      ),
+                      height: 120,
+                      width: 100,
+                      padding: EdgeInsets.all(10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/images/ss1.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(
+                            0.5), // Set the opacity as per your preference
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.white.withOpacity(.15),
+                            blurRadius: 10,
+                            offset: Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                    ),
                     Column(
                       children: [
                         Text(
@@ -218,7 +292,7 @@ class _FavoriteViewState extends State<FavoriteView> {
               vertical: 10,
             ),
             padding: EdgeInsets.all(10),
-            height: isExpanded3 ? 60 : 1365,
+            height: isExpanded3 ? 150 : 1435,
             curve: Curves.fastLinearToSlowEaseIn,
             duration: Duration(milliseconds: 1200),
             decoration: BoxDecoration(
@@ -239,6 +313,42 @@ class _FavoriteViewState extends State<FavoriteView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        right: 0,
+                        bottom: 0,
+                      ),
+                      height: 120,
+                      width: 100,
+                      padding: EdgeInsets.all(10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/images/ss2.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(
+                            0.5), // Set the opacity as per your preference
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.white.withOpacity(.15),
+                            blurRadius: 10,
+                            offset: Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                    ),
                     Column(
                       children: [
                         Text(
@@ -302,7 +412,7 @@ class _FavoriteViewState extends State<FavoriteView> {
               vertical: 10,
             ),
             padding: EdgeInsets.all(10),
-            height: isExpanded4 ? 60 : 1365,
+            height: isExpanded4 ? 150 : 1435,
             curve: Curves.fastLinearToSlowEaseIn,
             duration: Duration(milliseconds: 1200),
             decoration: BoxDecoration(
@@ -323,6 +433,42 @@ class _FavoriteViewState extends State<FavoriteView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        right: 0,
+                        bottom: 0,
+                      ),
+                      height: 120,
+                      width: 100,
+                      padding: EdgeInsets.all(10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage("assets/images/ss5.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white.withOpacity(
+                            0.5), // Set the opacity as per your preference
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.white.withOpacity(.15),
+                            blurRadius: 10,
+                            offset: Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                    ),
                     Column(
                       children: [
                         Text(

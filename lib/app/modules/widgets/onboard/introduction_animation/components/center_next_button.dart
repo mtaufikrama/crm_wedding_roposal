@@ -147,12 +147,15 @@ class CenterNextButton extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  Text(
-                    'Login',
-                    style: TextStyle(
-                      color: Color(0xff132137),
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                  InkWell(
+                    onTap: () => Get.toNamed(Routes.LOGIN),
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Color(0xff132137),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
