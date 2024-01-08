@@ -15,19 +15,6 @@ class _InfoDasarState extends State<InfoDasar> {
     return Container(
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text(
-              'Info dasar & Tampilan',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ),
           SizedBox(
             height: 10,
           ),

@@ -9,6 +9,8 @@ class TanggalAcara extends StatefulWidget {
 
 class _TanggalAcaraState extends State<TanggalAcara> {
   String selectedDropdownValue = "Akad"; // Default value dropdown
+  String selectedDropdownValueKota =
+      "Jakarta Selatan"; // Default value dropdown
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,6 +18,7 @@ class _TanggalAcaraState extends State<TanggalAcara> {
         children: [
           SizedBox(height: 10),
           buildTextField('Nama Acara', 'Resepsi Pernikahan ?'),
+          SizedBox(height: 10),
           buildDropdownField(
             'Nama Acara',
             '1',
@@ -24,7 +27,16 @@ class _TanggalAcaraState extends State<TanggalAcara> {
               'Akad',
             ],
           ),
-          buildTextField('Pilih Kabupaten/Kota', 'Pilih Kabupaten/Kota'),
+          buildDropdownFieldKota(
+            'Pilih Kabupaten/Kota',
+            'Jakarta Selatan',
+            [
+              'Jakarta Selatan',
+              'Jakarta Barat',
+              'Jakarta Timur',
+              'Jakarta Utara',
+            ],
+          ),
           buildTextField(
             'Alamat Acara (Pilih Kabupaten terlebihdulu Sebelum Mengisi Alamat)',
             'Lokasi Alamat Acara ?',
@@ -37,7 +49,7 @@ class _TanggalAcaraState extends State<TanggalAcara> {
               ),
               SizedBox(width: 10),
               Expanded(
-                child: buildTextField('Jam Awal', 'Jam Akhir'),
+                child: buildTextField('Jam Akhir', 'Jam Akhir'),
               ),
             ],
           ),
@@ -114,6 +126,47 @@ class _TanggalAcaraState extends State<TanggalAcara> {
                 // Handle dropdown value change here
                 setState(() {
                   selectedDropdownValue = value!;
+                });
+              },
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
+      ],
+    );
+  }
+
+  Widget buildDropdownFieldKota(
+    String label,
+    String hintText,
+    List<String> dropdownItems,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: TextStyle(fontWeight: FontWeight.normal)),
+        SizedBox(height: 10),
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.white,
+            border: Border.all(color: Colors.grey.shade300, width: 1),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: selectedDropdownValueKota,
+              items: dropdownItems.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? value) {
+                // Handle dropdown value change here
+                setState(() {
+                  selectedDropdownValueKota = value!;
                 });
               },
             ),

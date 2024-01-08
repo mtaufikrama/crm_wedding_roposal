@@ -150,15 +150,9 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                       flex: 5,
                       child: Padding(
                         padding: EdgeInsets.only(top: size.height * .1),
-                        child: Text(
-                          'APP NAME',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(.7),
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1,
-                            wordSpacing: 4,
-                          ),
+                        child: Image.asset(
+                          'assets/images/logo_wedding.png',
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),

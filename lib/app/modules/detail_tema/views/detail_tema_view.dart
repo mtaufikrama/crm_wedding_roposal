@@ -7,6 +7,7 @@ import 'package:crm_wedding/app/modules/detail_tema/widgets_detail_tema/detail_u
 import 'package:crm_wedding/app/routes/app_pages.dart';
 import 'package:fine_stepper/fine_stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class DetailTemaView extends StatefulWidget {
@@ -69,38 +70,64 @@ class _DetailTemaViewState extends State<DetailTemaView> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.amber, // Warna utama (kuning)
-        ).copyWith(
-          background: Colors.white, // Warna latar belakang umum
-          onBackground: Colors.white, // Warna teks pada latar belakang
-          primary: Colors.black, // Warna teks dan ikon utama
-          onPrimary: Colors.amber, // Warna teks pada teks dan ikon utama
-        ),
-      ),
-      home: Scaffold(
-        backgroundColor: Color(0xffF7EBE1),
-        appBar: AppBar(
-          backgroundColor: Color(0xffF7EBE1),
-          centerTitle: false,
-          title: const Text('Buat tema'),
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.arrow_back),
+    return WillPopScope(
+      onWillPop: () async {
+        showModalBottomSheet(
+          showDragHandle: true,
+          context: context,
+          enableDrag: false,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(20),
+            ),
+          ),
+          builder: (context) => buildSheetBack(),
+        );
+        return true;
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.amber, // Warna utama (kuning)
+          ).copyWith(
+            background: Colors.white, // Warna latar belakang umum
+            onBackground: Colors.white, // Warna teks pada latar belakang
+            primary: Colors.black, // Warna teks dan ikon utama
+            onPrimary: Colors.amber, // Warna teks pada teks dan ikon utama
           ),
         ),
-        body: Builder(
-          builder: (context) {
-            if (index == 0) {
-              return iconExample();
-            }
-            return linearExample();
-          },
+        home: Scaffold(
+          backgroundColor: Color(0xffF7EBE1),
+          appBar: AppBar(
+            backgroundColor: Color(0xffF7EBE1),
+            centerTitle: false,
+            title: const Text('Buat tema'),
+            leading: IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  showDragHandle: true,
+                  context: context,
+                  enableDrag: false,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(20),
+                    ),
+                  ),
+                  builder: (context) => buildSheetBack(),
+                );
+              },
+              icon: Icon(Icons.arrow_back),
+            ),
+          ),
+          body: Builder(
+            builder: (context) {
+              if (index == 0) {
+                return iconExample();
+              }
+              return linearExample();
+            },
+          ),
         ),
       ),
     );
@@ -139,6 +166,68 @@ class _DetailTemaViewState extends State<DetailTemaView> {
         ),
       ),
     );
+  }
+
+  Widget buildSheetBack() {
+    return Container(
+        height: 130,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.transparent,
+        ),
+        child: Column(
+          children: [
+            Column(
+              children: [
+                Text('Anda yakin ingin meninggalkan Pengisian Form Wdding ?',
+                    textAlign: TextAlign.center),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () async {
+                    Get.toNamed(Routes.HOME);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green),
+                    child: const Center(
+                      child: Text('Save sebagai Draf',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                InkWell(
+                  onTap: () => Get.back(),
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.blue),
+                    child: const Center(
+                      child: Text('Tetap di Sini',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ));
   }
 
   Widget buildStackStep(BuildContext context) {
@@ -244,7 +333,8 @@ class _DetailTemaViewState extends State<DetailTemaView> {
                       ElevatedButton(
                         style: style,
                         onPressed: () {},
-                        child: const Text('Enabled'),
+                        child: const Text('Tambah',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ],
                   ),
@@ -273,8 +363,17 @@ class _DetailTemaViewState extends State<DetailTemaView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Step ${FineStepper.of(context).stepIndex + 1}',
-                    style: TextStyle(color: Colors.transparent),
+                    'Step ${FineStepper.of(context).stepIndex + 1}  '
+                    'Upload Photo Wedding'
+                    '',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 17),
+                  ),
+                  SizedBox(
+                    height: 200,
                   ),
                   GalleryView(),
                   SizedBox(
@@ -301,8 +400,14 @@ class _DetailTemaViewState extends State<DetailTemaView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Step ${FineStepper.of(context).stepIndex + 1}',
-                    style: TextStyle(color: Colors.transparent),
+                    'Step ${FineStepper.of(context).stepIndex + 1}  '
+                    'Ucapan & Kata-Kata'
+                    '',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 17),
                   ),
                   UcapanView(),
                   SizedBox(

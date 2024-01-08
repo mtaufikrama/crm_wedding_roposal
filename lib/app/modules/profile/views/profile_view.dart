@@ -100,7 +100,7 @@ class ProfileView extends GetView<ProfileController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -111,7 +111,7 @@ class ProfileView extends GetView<ProfileController> {
                         ]),
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -122,7 +122,7 @@ class ProfileView extends GetView<ProfileController> {
                         ]),
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -134,22 +134,22 @@ class ProfileView extends GetView<ProfileController> {
                         ]),
                       ),
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(5),
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10)),
                         child: Column(children: [
-                          Icon(Icons.discount_rounded,
+                          Icon(Icons.drive_file_rename_outline_rounded,
                               color: Colors.greenAccent),
-                          Text('discount')
+                          Text('Draf Undangan')
                         ]),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(5),
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       color: Colors.white,

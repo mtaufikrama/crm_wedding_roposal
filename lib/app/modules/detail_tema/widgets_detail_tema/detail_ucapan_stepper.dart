@@ -8,23 +8,6 @@ class UcapanView extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text(
-              'Ucapan & Kata-Kata',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.amber,
-              ),
-            ),
-          ),
-          SizedBox(height: 10),
           buildTextField(
               'Ucapan Pembuka (Ucapan awal undangan, bisa diisi doa)',
               'Ucapan Pembuka'),
