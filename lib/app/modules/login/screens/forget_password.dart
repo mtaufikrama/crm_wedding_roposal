@@ -23,7 +23,6 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
     return Scaffold(
       backgroundColor: Color(0xffF7EBE1),
       appBar: AppBar(
-        toolbarHeight: 60,
         backgroundColor: Color(0xffF7EBE1).withAlpha(200),
       ),
       body: SafeArea(
@@ -40,14 +39,14 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     FadeInAnimation(
                       delay: 1.3,
                       child: Text(
-                        "Forgot Password?",
+                        "Tidak ingat kata sandi?",
                         style: Common().titelTheme,
                       ),
                     ),
                     FadeInAnimation(
                       delay: 1.6,
                       child: Text(
-                        "Don't worry! It occurs. Please enter the email address linked with your account.",
+                        "Jangan khawatir! Ini terjadi. Silakan masukkan alamat email yang tertaut dengan akun Anda.",
                         style: Common().mediumThemeblack,
                       ),
                     )
@@ -62,7 +61,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                       FadeInAnimation(
                         delay: 1.9,
                         child: const CustomTextFormField(
-                          hinttext: 'Enter your email',
+                          hinttext: 'Masukkan email Anda',
                           obsecuretext: false,
                         ),
                       ),
@@ -72,7 +71,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                       FadeInAnimation(
                         delay: 2.1,
                         child: CustomElevatedButton(
-                          message: "Send Code ",
+                          message: "Kirim Kode",
                           function: () {
                             GoRouter.of(context)
                                 .pushNamed(Routers.otpverification.name);
@@ -86,14 +85,14 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               ),
               Spacer(),
               FadeInAnimation(
-                delay: 2.4,
+                delay: 2.8,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 50),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Don’t have an account?",
+                        "Belum punya akun?",
                         style: Common().hinttext,
                       ),
                       TextButton(
@@ -101,13 +100,13 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                             Get.to(SignupPage());
                           },
                           child: Text(
-                            "Register Now",
+                            "Daftar sekarang",
                             style: Common().mediumTheme,
                           )),
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

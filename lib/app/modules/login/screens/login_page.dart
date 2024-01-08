@@ -3,6 +3,7 @@ import 'package:crm_wedding/app/modules/login/router/router.dart';
 import 'package:crm_wedding/app/modules/login/screens/fade_animationtest.dart';
 import 'package:crm_wedding/app/modules/login/screens/signup_page.dart';
 import 'package:crm_wedding/app/modules/login/widgets/custom_widget.dart';
+import 'package:crm_wedding/app/routes/app_pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Color(0xffF7EBE1),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 60,
+        toolbarHeight: 0,
         backgroundColor: Color(0xffF7EBE1).withAlpha(200),
       ),
       body: WillPopScope(
@@ -60,14 +61,14 @@ class _LoginPageState extends State<LoginPage> {
                         FadeInAnimation(
                           delay: 1.3,
                           child: Text(
-                            "Welcome back! Glad ",
+                            "Selamat Datang",
                             style: Common().titelTheme,
                           ),
                         ),
                         FadeInAnimation(
                           delay: 1.6,
                           child: Text(
-                            "to see you, Again!",
+                            "kembali!",
                             style: Common().titelTheme,
                           ),
                         ),
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                           FadeInAnimation(
                             delay: 1.9,
                             child: const CustomTextFormField(
-                              hinttext: 'Enter your email',
+                              hinttext: 'Masukkan email Anda',
                               obsecuretext: false,
                             ),
                           ),
@@ -95,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                               obscureText: flag ? true : false,
                               decoration: InputDecoration(
                                   contentPadding: const EdgeInsets.all(18),
-                                  hintText: "Enter your password",
+                                  hintText: "Masukkan kata sandi Anda",
                                   hintStyle: Common().hinttext,
                                   border: OutlineInputBorder(
                                       borderSide:
@@ -116,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                                     Get.to(ForgetPasswordPage());
                                   },
                                   child: Text(
-                                    "Forget Password?",
+                                    "Lupa Password?",
                                     style: Common().semiboldblack,
                                   )),
                             ),
@@ -124,8 +125,9 @@ class _LoginPageState extends State<LoginPage> {
                           FadeInAnimation(
                             delay: 2.8,
                             child: CustomElevatedButton(
-                              message: "Login",
+                              message: "Masuk",
                               function: () {
+                                Get.toNamed(Routes.HOME);
                                 if (flag) {
                                   setState(() {
                                     flag = false;
@@ -149,14 +151,14 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: SizedBox(
-                      height: 130,
+                      height: 160,
                       width: double.infinity,
                       child: Column(
                         children: [
                           FadeInAnimation(
                             delay: 2.2,
                             child: Text(
-                              "Or Log with",
+                              "Atau Masuk dengan",
                               style: Common().semiboldblack,
                             ),
                           ),
@@ -194,7 +196,7 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            "Don’t have an account?",
+                            "Belum punya akun?",
                             style: Common().hinttext,
                           ),
                           TextButton(
@@ -202,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Get.to(SignupPage());
                               },
                               child: Text(
-                                "Register Now",
+                                "Daftar sekarang",
                                 style: Common().mediumTheme,
                               )),
                         ],
