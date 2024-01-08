@@ -1,13 +1,36 @@
 import 'package:flutter/material.dart';
 
-class InfoDasar extends StatelessWidget {
+class InfoDasar extends StatefulWidget {
   const InfoDasar({Key? key}) : super(key: key);
+
+  @override
+  _InfoDasarState createState() => _InfoDasarState();
+}
+
+class _InfoDasarState extends State<InfoDasar> {
+  String selectedDropdownValue = "Islam"; // Default value dropdown
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text(
+              'Info dasar & Tampilan',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             children: [
               Column(
@@ -43,27 +66,12 @@ class InfoDasar extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(
-                        'Info dasar & Tampilan',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.amber,
-                        ),
-                      ),
-                    ),
                     SizedBox(height: 20),
-                    buildTextField('Nama Acara :', 'irwan & mei'),
+                    buildTextField('Nama Acara :', 'adni & anggi'),
                     SizedBox(height: 10),
                     buildTextField(
                       'Link - Contoh : \npende-desak-wedding',
-                      'irwan-&-mei',
+                      'adni-&-anggi',
                     ),
                   ],
                 ),
@@ -97,7 +105,7 @@ class InfoDasar extends StatelessWidget {
         SizedBox(height: 10),
         TextField(
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            contentPadding: EdgeInsets.symmetric(horizontal: 40),
             filled: true,
             fillColor: Colors.white,
             hintText: hintText,
@@ -140,31 +148,17 @@ class InfoDasar extends StatelessWidget {
       children: [
         Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
         SizedBox(height: 10),
-        TextField(
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
-            filled: true,
-            fillColor: Colors.white,
-            hintText: hintText,
-            hintStyle: TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.normal,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                width: 1,
-                color: Colors.grey.shade300,
-              ),
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                width: 1,
-                color: Colors.grey.shade300,
-              ),
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            suffixIcon: DropdownButton<String>(
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.white,
+            border: Border.all(color: Colors.grey.shade300, width: 1),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: selectedDropdownValue,
               items: dropdownItems.map((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
@@ -173,9 +167,10 @@ class InfoDasar extends StatelessWidget {
               }).toList(),
               onChanged: (String? value) {
                 // Handle dropdown value change here
+                setState(() {
+                  selectedDropdownValue = value!;
+                });
               },
-              underline: Container(),
-              icon: Icon(Icons.arrow_drop_down),
             ),
           ),
         ),

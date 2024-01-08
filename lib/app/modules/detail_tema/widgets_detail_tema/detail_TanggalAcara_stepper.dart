@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
 
-class TanggalAcara extends StatelessWidget {
-  const TanggalAcara({Key? key});
+class TanggalAcara extends StatefulWidget {
+  const TanggalAcara({Key? key}) : super(key: key);
 
+  @override
+  _TanggalAcaraState createState() => _TanggalAcaraState();
+}
+
+class _TanggalAcaraState extends State<TanggalAcara> {
+  String selectedDropdownValue = "Akad"; // Default value dropdown
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text(
-              'Alamat & Tanggal Acara 1',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.amber,
-              ),
-            ),
-          ),
           SizedBox(height: 10),
           buildTextField('Nama Acara', 'Resepsi Pernikahan ?'),
+          buildDropdownField(
+            'Nama Acara',
+            '1',
+            [
+              'Repsesi',
+              'Akad',
+            ],
+          ),
           buildTextField('Pilih Kabupaten/Kota', 'Pilih Kabupaten/Kota'),
           buildTextField(
             'Alamat Acara (Pilih Kabupaten terlebihdulu Sebelum Mengisi Alamat)',
@@ -81,6 +79,47 @@ class TanggalAcara extends StatelessWidget {
             ),
           ),
         ),
+      ],
+    );
+  }
+
+  Widget buildDropdownField(
+    String label,
+    String hintText,
+    List<String> dropdownItems,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: TextStyle(fontWeight: FontWeight.normal)),
+        SizedBox(height: 10),
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.white,
+            border: Border.all(color: Colors.grey.shade300, width: 1),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: selectedDropdownValue,
+              items: dropdownItems.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? value) {
+                // Handle dropdown value change here
+                setState(() {
+                  selectedDropdownValue = value!;
+                });
+              },
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
       ],
     );
   }

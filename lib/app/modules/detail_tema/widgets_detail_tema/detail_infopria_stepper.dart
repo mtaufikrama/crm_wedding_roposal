@@ -1,29 +1,19 @@
 import 'package:flutter/material.dart';
 
-class InfoPria extends StatelessWidget {
-  const InfoPria({super.key});
+class InfoPria extends StatefulWidget {
+  const InfoPria({Key? key}) : super(key: key);
 
+  @override
+  _InfoPriaState createState() => _InfoPriaState();
+}
+
+class _InfoPriaState extends State<InfoPria> {
+  String selectedDropdownValue = "1"; // Default value dropdown
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(10),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text(
-              'Mempelai Pria',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.amber,
-              ),
-            ),
-          ),
           SizedBox(height: 20),
           Row(
             children: [
@@ -66,9 +56,11 @@ class InfoPria extends StatelessWidget {
           buildTextField('Nama Panggilan Pria', 'Panggilan Pria ?'),
           buildTextField('Nama Ibu Pria', 'Ibu Pria ?'),
           buildTextField('Nama Ayah Pria', 'Ayah Pria ?'),
-          buildTextField(
-            'Anak ke? Contoh : Anak Pertama, Anak kedua, Anak ketiga dst...',
-            'Anak Pertama ?',
+          SizedBox(height: 10),
+          buildDropdownField(
+            'Anak ke? Contoh : Anak Pertama, Anak kedua, Anak ketiga dst...)',
+            '1',
+            ['1', '2', '3', '5', '6'],
           ),
           buildTextField('Alamat Pria', 'Alamat rumah si Pria ?'),
         ],
@@ -107,6 +99,47 @@ class InfoPria extends StatelessWidget {
             ),
           ),
         ),
+      ],
+    );
+  }
+
+  Widget buildDropdownField(
+    String label,
+    String hintText,
+    List<String> dropdownItems,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: TextStyle(fontWeight: FontWeight.normal)),
+        SizedBox(height: 10),
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.white,
+            border: Border.all(color: Colors.grey.shade300, width: 1),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              value: selectedDropdownValue,
+              items: dropdownItems.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? value) {
+                // Handle dropdown value change here
+                setState(() {
+                  selectedDropdownValue = value!;
+                });
+              },
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
       ],
     );
   }

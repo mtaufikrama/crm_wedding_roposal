@@ -75,7 +75,7 @@ class _DetailTemaViewState extends State<DetailTemaView> {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.amber, // Warna utama (kuning)
         ).copyWith(
-          background: Colors.amber, // Warna latar belakang umum
+          background: Colors.white, // Warna latar belakang umum
           onBackground: Colors.white, // Warna teks pada latar belakang
           primary: Colors.black, // Warna teks dan ikon utama
           onPrimary: Colors.amber, // Warna teks pada teks dan ikon utama
@@ -117,8 +117,17 @@ class _DetailTemaViewState extends State<DetailTemaView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Step ${FineStepper.of(context).stepIndex + 1}',
-                  style: TextStyle(color: Colors.transparent),
+                  'Step ${FineStepper.of(context).stepIndex + 1}  '
+                  'Info dasar & Tampilan'
+                  '',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 17),
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 InfoDasar(),
                 SizedBox(
@@ -139,13 +148,19 @@ class _DetailTemaViewState extends State<DetailTemaView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Step ${FineStepper.of(context).stepIndex + 1}',
-                    style: TextStyle(color: Colors.transparent),
+                    'Step ${FineStepper.of(context).stepIndex + 1}  '
+                    'Mempelai Pria'
+                    '',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 17),
                   ),
                   InfoPria(),
                   SizedBox(
@@ -167,13 +182,22 @@ class _DetailTemaViewState extends State<DetailTemaView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Step ${FineStepper.of(context).stepIndex + 1}',
-                    style: TextStyle(color: Colors.transparent),
+                    'Step ${FineStepper.of(context).stepIndex + 1}  '
+                    'Mempelai wanita'
+                    '',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 17),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Infowanita(),
                   SizedBox(
@@ -189,19 +213,40 @@ class _DetailTemaViewState extends State<DetailTemaView> {
   }
 
   Widget buildTanggalAcaraStep(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 10, color: Colors.yellow),
+        backgroundColor: Colors.yellow);
     return StepBuilder(
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Step ${FineStepper.of(context).stepIndex + 1}',
-                    style: TextStyle(color: Colors.transparent),
+                  Row(
+                    children: [
+                      Text(
+                        'Step ${FineStepper.of(context).stepIndex + 1}  '
+                        'Alamat & Tanggal Acara 1'
+                        '',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 17),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      ElevatedButton(
+                        style: style,
+                        onPressed: () {},
+                        child: const Text('Enabled'),
+                      ),
+                    ],
                   ),
                   TanggalAcara(),
                   SizedBox(
