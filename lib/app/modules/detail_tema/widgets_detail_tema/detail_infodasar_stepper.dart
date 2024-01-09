@@ -1,4 +1,6 @@
+import 'package:crm_wedding/app/modules/webview/views/webview_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class InfoDasar extends StatefulWidget {
   const InfoDasar({Key? key}) : super(key: key);
@@ -26,24 +28,31 @@ class _InfoDasarState extends State<InfoDasar> {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    height: 260,
-                    width: 170,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/ss3.jpg"),
-                        fit: BoxFit.cover,
+                  InkWell(
+                    onTap: () => Get.to(
+                      WebviewView(
+                        url: 'https://ulems.my.id/?to=Teman+teman+semua',
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(.15),
-                          blurRadius: 10,
-                          offset: Offset(0, 10),
+                    ),
+                    child: Container(
+                      height: 260,
+                      width: 170,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/ss3.jpg"),
+                          fit: BoxFit.cover,
                         ),
-                      ],
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.15),
+                            blurRadius: 10,
+                            offset: Offset(0, 10),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

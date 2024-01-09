@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:crm_wedding/app/modules/widgets/onboard/introduction_animation/love/keranjang.dart';
 import 'package:crm_wedding/app/modules/widgets/onboard/introduction_animation/love/love.dart';
 import 'package:crm_wedding/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,9 @@ class WebviewView extends GetView<WebviewController> {
       appBar: AppBar(
         toolbarHeight: 60,
         backgroundColor: Color(0xffF7EBE1).withAlpha(200),
+        leading: new IconButton(
+            icon: new Icon(Icons.close, color: Colors.black),
+            onPressed: () => Get.back()),
         title: ElevatedButton(
           onPressed: () => Get.toNamed(Routes.DETAIL_TEMA),
           style: ElevatedButton.styleFrom(
@@ -30,7 +34,9 @@ class WebviewView extends GetView<WebviewController> {
           ),
         ),
         actions: [
-          MyCustomWidget(),
+          Row(
+            children: [MyCustomWidget(), KeranjangIcon()],
+          )
         ],
       ),
       body: WebView(
