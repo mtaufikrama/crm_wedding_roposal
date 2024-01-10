@@ -12,6 +12,15 @@ abstract class Routes {
   static const RIWAYAT = _Paths.RIWAYAT;
   static const PROFILE = _Paths.PROFILE;
   static const LOGIN = _Paths.LOGIN;
+  static const KERANJANG = _Paths.KERANJANG;
+  static const DRAFKUNJUNGAN = _Paths.DRAFKUNJUNGAN;
+  static const HISTORY = _Paths.HISTORY;
+  static const FAVORITE2 = _Paths.FAVORITE2;
+  static const ULASAN = _Paths.ULASAN;
+  static const TENTANGKAMI = _Paths.TENTANGKAMI;
+  static const ABOUT = _Paths.ABOUT;
+  static const TERMSOFSERVICE = _Paths.TERMSOFSERVICE;
+  static const EDITPROFILE = _Paths.EDITPROFILE;
 }
 
 abstract class _Paths {
@@ -25,4 +34,13 @@ abstract class _Paths {
   static const RIWAYAT = '/riwayat';
   static const PROFILE = '/profile';
   static const LOGIN = '/login';
+  static const KERANJANG = '/keranjang';
+  static const DRAFKUNJUNGAN = '/drafkunjungan';
+  static const HISTORY = '/history';
+  static const FAVORITE2 = '/favorite2';
+  static const ULASAN = '/ulasan';
+  static const TENTANGKAMI = '/tentangkami';
+  static const ABOUT = '/about';
+  static const TERMSOFSERVICE = '/termsofservice';
+  static const EDITPROFILE = '/editprofile';
 }

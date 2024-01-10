@@ -80,18 +80,21 @@ class ProfileView extends GetView<ProfileController> {
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Edit Profile'),
-                      Icon(Icons.arrow_forward_ios_rounded)
-                    ],
+                InkWell(
+                  onTap: () => Get.toNamed(Routes.EDITPROFILE),
+                  child: Container(
+                    margin: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Edit Profile'),
+                        Icon(Icons.arrow_forward_ios_rounded)
+                      ],
+                    ),
                   ),
                 ),
                 Container(
@@ -99,51 +102,64 @@ class ProfileView extends GetView<ProfileController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        margin: EdgeInsets.all(5),
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(children: [
-                          Icon(Icons.history, color: Colors.blueAccent),
-                          Text('History')
-                        ]),
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.HISTORY),
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(children: [
+                            Icon(Icons.history, color: Colors.blueAccent),
+                            Text('History')
+                          ]),
+                        ),
                       ),
-                      Container(
-                        margin: EdgeInsets.all(5),
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(children: [
-                          Icon(Icons.favorite_rounded, color: Colors.redAccent),
-                          Text('favorite')
-                        ]),
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.FAVORITE2),
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(children: [
+                            Icon(Icons.favorite_rounded,
+                                color: Colors.redAccent),
+                            Text('favorite')
+                          ]),
+                        ),
                       ),
-                      Container(
-                        margin: EdgeInsets.all(5),
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(children: [
-                          Icon(Icons.shopping_bag_rounded,
-                              color: Colors.orangeAccent),
-                          Text('Keranjang')
-                        ]),
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.KERANJANG),
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(children: [
+                            Icon(Icons.shopping_bag_rounded,
+                                color: Colors.orangeAccent),
+                            Text('Keranjang')
+                          ]),
+                        ),
                       ),
-                      Container(
-                        margin: EdgeInsets.all(5),
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(children: [
-                          Icon(Icons.drive_file_rename_outline_rounded,
-                              color: Colors.greenAccent),
-                          Text('Draf Undangan')
-                        ]),
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.DRAFKUNJUNGAN),
+                        child: Container(
+                          margin: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(children: [
+                            Icon(Icons.drive_file_rename_outline_rounded,
+                                color: Colors.greenAccent),
+                            Text('Draf Undangan')
+                          ]),
+                        ),
                       ),
                     ],
                   ),
@@ -156,42 +172,54 @@ class ProfileView extends GetView<ProfileController> {
                       borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Ulasan'),
-                          Icon(Icons.arrow_forward_ios_rounded)
-                        ],
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.ULASAN),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Ulasan'),
+                            Icon(Icons.arrow_forward_ios_rounded)
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Tentang Kami'),
-                          Icon(Icons.arrow_forward_ios_rounded)
-                        ],
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.TENTANGKAMI),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Tentang Kami'),
+                            Icon(Icons.arrow_forward_ios_rounded)
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('About'),
-                          Icon(Icons.arrow_forward_ios_rounded)
-                        ],
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.ABOUT),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('About'),
+                            Icon(Icons.arrow_forward_ios_rounded)
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Terms of Service'),
-                          Icon(Icons.arrow_forward_ios_rounded)
-                        ],
+                      InkWell(
+                        onTap: () => Get.toNamed(Routes.TERMSOFSERVICE),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Terms of Service'),
+                            Icon(Icons.arrow_forward_ios_rounded)
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
