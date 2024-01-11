@@ -101,7 +101,7 @@ class _InfoDasarState extends State<InfoDasar> {
         SizedBox(height: 10),
         TextField(
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 40),
+            contentPadding: EdgeInsets.symmetric(horizontal: 10),
             filled: true,
             fillColor: Colors.white,
             hintText: hintText,
@@ -144,29 +144,57 @@ class _InfoDasarState extends State<InfoDasar> {
       children: [
         Text(label, style: TextStyle(fontWeight: FontWeight.bold)),
         SizedBox(height: 10),
-        Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
-            border: Border.all(color: Colors.grey.shade300, width: 1),
-          ),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              value: selectedDropdownValue,
-              items: dropdownItems.map((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
+        InkWell(
+          onTap: () {
+            showModalBottomSheet(
+              context: context,
+              enableDrag: true,
+              showDragHandle: true,
+              builder: (BuildContext context) {
+                return Container(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.only(left: 16),
+                        child: Text('Pilih Agama :',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17)),
+                      ),
+                      Divider(),
+                      for (String value in dropdownItems)
+                        ListTile(
+                          title: Text(value),
+                          onTap: () {
+                            // Handle dropdown value change here
+                            setState(() {
+                              selectedDropdownValue = value;
+                            });
+                            Navigator.pop(context);
+                          },
+                        ),
+                    ],
+                  ),
                 );
-              }).toList(),
-              onChanged: (String? value) {
-                // Handle dropdown value change here
-                setState(() {
-                  selectedDropdownValue = value!;
-                });
               },
+            );
+          },
+          child: Container(
+            width: double.infinity,
+            height: 55,
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: Colors.white,
+              border: Border.all(color: Colors.grey.shade300, width: 1),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(selectedDropdownValue),
+                Icon(Icons.arrow_drop_down),
+              ],
             ),
           ),
         ),

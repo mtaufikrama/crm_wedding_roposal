@@ -102,7 +102,7 @@ class _DetailTemaViewState extends State<DetailTemaView> {
           appBar: AppBar(
             backgroundColor: Color(0xffF7EBE1),
             centerTitle: false,
-            title: const Text('Buat tema'),
+            title: const Text('Buat Undangan'),
             leading: IconButton(
               onPressed: () {
                 showModalBottomSheet(
